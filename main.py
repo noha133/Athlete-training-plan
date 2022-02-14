@@ -27,12 +27,13 @@ def print_test_weeks(start_week,end,weeks):
 def Filler_MainBlocks(weeks,start_week,end_week):
 
     a=int((weeks-8)%4)
-    if (a == 0):
+    #weeks=8
+    if (a==0):
         Range = weeks - 4
         start_block = 3
         start_list = 0
         print_MainBlock(start_week, end_week, weeks, Range, start_list, start_block)
-
+    #weeks=9,...
     if(a==1):
         start_week = end_week + timedelta(days=1)
         end_week = start_week + timedelta(days=6)
@@ -42,15 +43,15 @@ def Filler_MainBlocks(weeks,start_week,end_week):
         start_list=0
         print_MainBlock(start_week, end_week,weeks,Range, start_list, start_block)
 
-
-    if (a == 2):
+    # weeks=10,...
+    if (a==2):
         start_list=2
         Range = weeks - 4
         start_block = 3
         print_MainBlock(start_week, end_week,weeks,Range, start_list, start_block)
 
-
-    if (a == 3):
+    # weeks=11,...
+    if (a==3):
         start_list = 1
         Range = weeks - 4
         start_block = 3
