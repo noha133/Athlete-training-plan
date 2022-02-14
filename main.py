@@ -27,6 +27,12 @@ def print_test_weeks(start_week,end,weeks):
 def Filler_MainBlocks(weeks,start_week,end_week):
 
     a=int((weeks-8)%4)
+    if (a == 0):
+        Range = weeks - 4
+        start_block = 3
+        start_list = 0
+        print_MainBlock(start_week, end_week, weeks, Range, start_list, start_block)
+
     if(a==1):
         start_week = end_week + timedelta(days=1)
         end_week = start_week + timedelta(days=6)
@@ -34,26 +40,26 @@ def Filler_MainBlocks(weeks,start_week,end_week):
         Range=weeks-5
         start_block=4
         start_list=0
-        print_MainBlock(start_week, end_week, Range, start_list, start_block)
+        print_MainBlock(start_week, end_week,weeks,Range, start_list, start_block)
 
 
     if (a == 2):
         start_list=2
         Range = weeks - 4
         start_block = 3
-        print_MainBlock(start_week, end_week, Range, start_list, start_block)
+        print_MainBlock(start_week, end_week,weeks,Range, start_list, start_block)
 
 
     if (a == 3):
         start_list = 1
         Range = weeks - 4
         start_block = 3
-        print_MainBlock(start_week, end_week, Range, start_list, start_block)
+        print_MainBlock(start_week, end_week,weeks,Range, start_list, start_block)
 
 
-    print_Taper_Racer(weeks,start_week, end_week)
 
-def print_MainBlock(start_week, end_week, Range, start_list, start_block):
+
+def print_MainBlock(start_week, end_week,weeks,Range, start_list, start_block):
     s=start_list
     for i in range(Range):
         start_week = end_week + timedelta(days=1)
@@ -63,6 +69,7 @@ def print_MainBlock(start_week, end_week, Range, start_list, start_block):
         s = s + 1
         if (s == 4):
             s = 0
+    print_Taper_Racer(weeks, start_week, end_week)
 
 def print_Taper_Racer(weeks,start_week,end_week):
     names = ["Taper", "Racer"]
@@ -80,8 +87,8 @@ def print_Taper_Racer(weeks,start_week,end_week):
 
 
 
-start_date = str(input('Enter date(Sunday 6th of June 2021: '))
-end_date = str(input('Enter date(Sunday 6th of June 2021: '))
+start_date = str(input('Enter date->format(Sunday 6th of June 2021: '))
+end_date = str(input('Enter date->format(Sunday 6th of June 2021: '))
 week=get_inputs(start_date,end_date)
 
 
